@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    /* border:solid 1px; */
+    margin: 35px;
+    width:auto;
+    height:80vh;
+    justify-content: center;
+    align-items: center;
+}
+#astro {
+    display: flex;
+    border-radius: 50px;
+    width:50%;
+    height: 100%;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    overflow: hidden;
+    box-shadow: 0 2px 28px rgba(0,0,0,0.5);
+}
+#astro img {
+    width:55%
+}
+
+#questions {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 45%;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+.text {
+    color:white;
+    font-size: 18px;
+    text-align: start;
+    padding: 20px;
+}
+
+.select {
+    width:90%;
+    color:black;
+    cursor: pointer;
+}
+

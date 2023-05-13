@@ -1,0 +1,101 @@
+#container {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.favorites {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width:70%;
+}
+
+.filters {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 100px;
+}
+
+.filters select  {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    border: none;
+    outline: none;
+    box-shadow:5px 5px 15px rgb(169, 81, 157);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+} 
+
+.filters select:focus {
+    outline: none;
+    box-shadow: 5px 5px 15px #aaa;
+}
+
+.cards {
+    width: 97%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-flow: column;
+    max-height: calc(100vh - 100px); 
+    overflow: auto;
+}
+
+.cards::-webkit-scrollbar {
+    height: 10px;
+}
+  
+.cards::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 5px;
+}
+.astroContainer {
+    position: relative;
+    width: 30%;
+    height: 80vh;
+    /* border: solid 1px black; */
+    animation: float 10s infinite;
+}
+
+@keyframes float {
+    0% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+}
+
+#astro {
+    position: absolute;
+    width: 30%;
+    height: 60%;
+    bottom: 0;
+    right: 40%;
+}
+
+#dialogue {
+    position: absolute;
+    top: 35%;
+    left: 58%;
+    /* border: solid white 2px; */
+    color: white;
+    background-color: rgb(0, 0, 0, 0.3);
+    border-radius: 7px;
+    backdrop-filter: blur(5px);
+    font-size:20px;
+    max-width: 65%;
+    text-align: start;
+}

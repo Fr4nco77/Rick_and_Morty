@@ -1,0 +1,1 @@
+module.exports = [{email: "elpepe@gmail.com", password: "elpepe37"}]

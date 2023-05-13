@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.buttons {
+    display:flex;
+    flex-direction: row;
+    width:25%;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.buttons button {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 15px;
+    background-color: black;
+    color: white;
+    border: solid 2px black;
+    outline: none;
+    box-shadow:5px 5px 20px rgb(0,0,0,0.5);
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    box-shadow:5px 5px 20px #aaa;
+}

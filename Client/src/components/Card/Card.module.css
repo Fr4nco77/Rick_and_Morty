@@ -1,0 +1,74 @@
+.card {
+    height: 200px;
+    width: 200px;
+    margin: 50px;
+    border-radius: 15px;
+    box-shadow:5px 5px 20px rgb(169, 81, 157);
+    overflow: hidden;
+    position: relative;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+#close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width:25px;
+    height:25px;
+    border-bottom-left-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.fav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom-right-radius: 10px;
+    width:25px;
+    height:25px;
+    border: none;
+    outline: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+h2 {
+    position: absolute;
+    bottom: 0;
+    width:100%;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+}
+ 
+.info {
+    padding: 0px 5px 6px 6px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    background-color: black;
+    color: white;
+    transition: transform 0.5s;
+    font-size: 17px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.card:hover .info{
+    transform: translateX(0);
+}
+  
+.card:not(:hover) .info {
+    transform: translateX(-100%)
+}
