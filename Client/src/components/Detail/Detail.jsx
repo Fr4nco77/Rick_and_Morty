@@ -23,7 +23,7 @@ export const Detail = ({ end }) => {
 
 
     const el = useRef(null)
-    const text = ["", "Te dije una perdida de tiempo... como haber venido a este sector", "...", "...", "Pense que habia una posibilidad de encontrarlo, pero nunca dejo de equivocarme", "", "Explora el sector cuanto quieras, ire a sentarme un rato", ""];
+    const text = ["", "Te dije una perdida de tiempo... como haber venido a este sector", "...", "...", "Pensé que había una posibilidad de encontrarlo, pero nunca dejo de equivocarme", "", "Explora el sector cuanto quieras, iré a sentarme un rato", ""];
     const options = {
         strings: text,
         typeSpeed: 50,

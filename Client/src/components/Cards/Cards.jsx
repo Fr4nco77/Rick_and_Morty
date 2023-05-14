@@ -9,7 +9,7 @@ export function Cards(props) {
    const { characters, onClose, end } = props;
 
    const el = useRef(null)
-   const text = ["","Rapido, empieza por poner un identificador en el cuadrante superior derecho y acciona el interruptor","Vaya, que ser tan... singular","Seguro esta muerto, revisalo", "Tambien puedes acceder a un ser aleatorio con aquel otro interruptor","...", "...", "Procura no romperlo, no creo que el creador este dispuesto a arreglarlo","Creo que esa ya es mucha informacion, procura desecharla o almacenarla en el deposito para verla en profundidad despues", "Aquí no esta... cuando termines accede al deposito", ""];
+   const text = ["","Rápido, empieza por poner un identificador en el cuadrante superior derecho y acciona el interruptor","Vaya, que ser tan... singular","Seguro está muerto, revisalo", "También puedes acceder a un ser aleatorio con aquel otro interruptor","...", "...", "Procura no romperlo, no creo que el creador esté dispuesto a arreglarlo","Creo que esa ya es mucha información, procura desecharla o almacenarla en el depósito para verla en profundidad después", "Aquí no esta... cuando termines accede al depósito", ""];
    const options = {
       strings: text,
       typeSpeed: 50,

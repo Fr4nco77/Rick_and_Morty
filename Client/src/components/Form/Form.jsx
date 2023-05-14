@@ -27,7 +27,7 @@ export const Form = (props) => {
     }
 
     const el = useRef(null)
-    const text = ["","Hey tu", "Si tu", "Tenes credenciales de acceso al sector", "Te importaria si te acompaño, necesito entrar pero esas credenciales son unicas y limitadas","A lo mejor podria guiarte dentro", "Gracias, vamos", "","Que credencial tan peculiar...", ""];
+    const text = ["","Hey tu", "Si tu", "Tienes credenciales de acceso al sector", "Te importaría si te acompaño, necesito entrar, pero esas credenciales son únicas y limitadas","A lo mejor podría guiarte dentro", "Gracias, vamos", "","Que credencial tan peculiar...", ""];
     const options = {
         strings: text,
         typeSpeed: 50,

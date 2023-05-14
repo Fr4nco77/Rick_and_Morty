@@ -23,7 +23,7 @@ export const Favorites = ({ myFavorites, end }) => {
     }
 
     const el = useRef(null)
-    const text = ["", "Que curioso esas tarjetas de refencia eran mis preferidas, aunque nunca entendí bien por qué","Mi padre solia decirme que todo me fascinaba...ja", "...", "...", "Perdon me fui por un momento", "Si quieres puedes ordenar esas tarjetas con los interruptores de arriba y/o devolverlas a su sitio cuando allas acabado con ellas", "Aparte puedes acceder al Reporte de cada individuo, aunque con la cantidad de informacion que hay alrededor nuestro seria una perdida de tiempo", ""];
+    const text = ["", "Que curioso esas tarjetas de refencia eran mis preferidas, aunque nunca entendí bien por qué","Mi padre solía decirme que todo me fascinaba...ja", "...", "...", "Perdón me fui por un momento", "Si quieres puedes ordenar esas tarjetas con los interruptores de arriba y/o devolverlas a su sitio cuando hallas acabado con ellas", "Aparte puedes acceder al Reporte de cada individuo, aunque con la cantidad de información que hay alrededor nuestro sería una perdida de tiempo", ""];
     const options = {
         strings: text,
         typeSpeed: 50,
