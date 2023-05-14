@@ -6,41 +6,62 @@
     height:80vh;
     justify-content: center;
     align-items: center;
+    
 }
 #astro {
     display: flex;
     border-radius: 50px;
-    width:50%;
+    width:55%;
     height: 100%;
     flex-direction: row-reverse;
     justify-content: flex-end;
-    overflow: hidden;
+    /* overflow: hidden; */
     box-shadow: 0 2px 28px rgba(0,0,0,0.5);
 }
 #astro img {
-    width:55%
+    width: 55%;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
 
 #questions {
     display:flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content:flex-start;
     align-items: center;
     width: 45%;
     backdrop-filter: blur(5px);
-    background-color: rgba(0, 0, 0, 0.5)
+    background-color: rgba(0, 0, 0, 0.5);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
 }
 
 .text {
+    /* border: solid white; */
     color:white;
     font-size: 18px;
     text-align: start;
+    height: 60%;
     padding: 20px;
+    overflow: auto;
+    scroll-behavior: smooth;
+    margin-bottom: 15px;
 }
 
-.select {
-    width:90%;
-    color:black;
+.text span {
+    text-decoration: underline;
+    float: right;
     cursor: pointer;
 }
+
+.text::-webkit-scrollbar {
+    height: 3px;
+    width: 10px;
+}
+  
+.text::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 20px;
+}
+
 

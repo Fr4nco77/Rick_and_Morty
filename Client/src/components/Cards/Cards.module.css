@@ -70,6 +70,7 @@
     max-height: calc(100vh - 100px); 
     overflow: auto;
     margin:30px;
+    scroll-behavior: smooth;
   }
 
 .cardsContainer::-webkit-scrollbar {

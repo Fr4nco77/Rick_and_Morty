@@ -48,6 +48,7 @@
     grid-auto-flow: column;
     max-height: calc(100vh - 100px); 
     overflow: auto;
+    scroll-behavior: smooth;
 }
 
 .cards::-webkit-scrollbar {

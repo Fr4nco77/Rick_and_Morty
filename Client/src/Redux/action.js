@@ -1,4 +1,4 @@
-import { ADD_FAV, REMOVE_FAV, FILTER, ORDER } from "./actionTypes"
+import { ADD_FAV, REMOVE_FAV, FILTER, ORDER, END } from "./actionTypes"
 import axios from "axios";
 
 export const addFav = (character) => {
@@ -42,4 +42,11 @@ export const orderCards = (orden) => {
         type: ORDER,
         payload: orden
     }
+}
+
+export const end = () => {
+   return {
+      type: END,
+      payload: null
+   }
 }

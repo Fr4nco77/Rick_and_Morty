@@ -4,8 +4,9 @@ import { useEffect, useState, useRef } from "react"
 import styles from "./Detail.module.css"
 import astro from "../../image/astroDetail.png"
 import Typed from "typed.js"
+import { connect } from "react-redux"
 
-const Detail = () => {
+export const Detail = ({ end }) => {
     const { id } = useParams();
     const [ character, setCharacter ] = useState({})
 
@@ -33,8 +34,12 @@ const Detail = () => {
         showCursor: false,
    };
    
-   useEffect(() => {
-       const typed = new Typed(el.current, options)
+    useEffect(() => {
+
+        if(el.current) {
+            const typed = new Typed(el.current, options)
+        }
+       
    }, [])
 
 
@@ -57,12 +62,26 @@ const Detail = () => {
                     </div>
                 ) :  ("")
             }
-            <div className={styles.astroContainer}>
-                <p id={styles.dialogue}ref={el}></p>
-                <Link to="/about"><img id={styles.astro} src={astro} alt="astro" /></Link>
-            </div>
+            {
+                end ? (<></>) : (
+                    <div className={styles.astroContainer}>
+                        <p id={styles.dialogue}ref={el}></p>
+                        <Link to="/about"><img id={styles.astro} src={astro} alt="astro" /></Link>
+                    </div>
+                )
+            }
+            
         </div>
     )
 }
 
-export default Detail
+const mapStateToProps = (state) => {
+    return {
+        end: state.end
+    }
+}
+
+export default connect (
+    mapStateToProps,
+    null)
+(Detail);

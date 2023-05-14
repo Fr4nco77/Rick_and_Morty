@@ -3,10 +3,10 @@ import styles from "./Cards.module.css"
 import astro from "../../image/astroHomeFav.png"
 import { useRef, useEffect } from 'react';
 import Typed from "typed.js"
-import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-export default function Cards(props) {
-   const { characters, onClose } = props;
+export function Cards(props) {
+   const { characters, onClose, end } = props;
 
    const el = useRef(null)
    const text = ["","Rapido, empieza por poner un identificador en el cuadrante superior derecho y acciona el interruptor","Vaya, que ser tan... singular","Seguro esta muerto, revisalo", "Tambien puedes acceder a un ser aleatorio con aquel otro interruptor","...", "...", "Procura no romperlo, no creo que el creador este dispuesto a arreglarlo","Creo que esa ya es mucha informacion, procura desecharla o almacenarla en el deposito para verla en profundidad despues", "Aquí no esta... cuando termines accede al deposito", ""];
@@ -21,16 +21,23 @@ export default function Cards(props) {
    };
    
    useEffect(() => {
-       const typed = new Typed(el.current, options)
+      if(el.current) {
+         const typed = new Typed(el.current, options)
+      }
    }, [])
 
 
    return (
       <div className={styles.container}>
-         <div className={styles.astroContainer}>
-            <Link to="/about"><img id={styles.astro}src={astro} alt="astro" /></Link>
-            <p id={styles.dialogue} ref={el}></p>
-         </div>
+         {
+            end ? (<></>) : (
+               <div className={styles.astroContainer}>
+                  <img id={styles.astro}src={astro} alt="astro" />
+                  <p id={styles.dialogue} ref={el}></p>
+               </div>
+            )
+         }
+         
          <div className={styles.cardsContainer}>
             {characters.map((character) => {
                return <Card 
@@ -48,3 +55,14 @@ export default function Cards(props) {
       </div>
    ) ;
 }
+
+const mapStateToProps = (state) => {
+   return {
+      end: state.end
+   }
+}
+
+export default connect(
+   mapStateToProps, 
+   null)
+   (Cards);

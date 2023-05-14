@@ -8,10 +8,11 @@ export default function Nav(props) {
         <div className={styles.container}> 
             <div className={styles.buttons}>
                 <Link to= "/home"><button>Home</button></Link>
-                <Link to="/favorites"><button>Deposit</button></Link>  
+                <Link to="/favorites"><button>Deposit</button></Link>
+                <Link to = "/"><button>Leave</button></Link> 
             </div>
             {
-                pathname === "home" && <SearchBar id={styles.bar} onSearch={props.onSearch}/>
+                pathname === "/home" && <SearchBar id={styles.bar} onSearch={props.onSearch}/>
             }
         </div>
     )

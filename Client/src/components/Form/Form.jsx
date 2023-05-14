@@ -3,10 +3,10 @@ import astro from "../../image/astro-form.png"
 import { useState, useEffect, useRef } from "react";
 import Typed from "typed.js"
 import Validation from "./Validation";
+import { connect } from "react-redux";
 
-
-const Form = (props) => {
-    const {login} = props
+export const Form = (props) => {
+    const { login, end } = props
     const [ userData, setUserData ] = useState({ email: '', password: ''})
     const [ errors, setErrors ] = useState({})
 
@@ -27,7 +27,7 @@ const Form = (props) => {
     }
 
     const el = useRef(null)
-    const text = ["","Hey tu", "Si tu", "Tenes credenciales de acceso al sector", "Te importaria si entro contigo, necesito entrar pero esas credenciales son unicas","A lo mejor podria guiarte dentro", "Gracias, vamos", "","...Que credencial tan peculiar", ""];
+    const text = ["","Hey tu", "Si tu", "Tenes credenciales de acceso al sector", "Te importaria si te acompaño, necesito entrar pero esas credenciales son unicas y limitadas","A lo mejor podria guiarte dentro", "Gracias, vamos", "","Que credencial tan peculiar...", ""];
     const options = {
         strings: text,
         typeSpeed: 50,
@@ -39,7 +39,9 @@ const Form = (props) => {
     };
     
     useEffect(() => {
-        const typed = new Typed(el.current, options)
+        if(el.current) {
+            const typed = new Typed(el.current, options)
+        }
     }, [])
  
     return(
@@ -68,13 +70,23 @@ const Form = (props) => {
                 </div>
                 <button className={styles.btn} type="submit" onClick={handleSubmit}>Log In</button>
             </form>
-
-            <div className={styles.astronautContainer}>
-                <p ref={el} id={styles.dialogue}></p>
-                <img src={astro} alt="astro" className={styles.astronaut}/>
-            </div>
+            {
+                end ? (<></>) : (
+                    <div className={styles.astronautContainer}>
+                        <p ref={el} id={styles.dialogue}></p>
+                        <img src={astro} alt="astro" className={styles.astronaut}/>
+                    </div>
+                )
+            }
+            
         </div>
     )
 }
 
-export default Form;
+const mapStateToProps = (state) => {
+    return {
+        end: state. end
+    }
+}
+
+export default connect(mapStateToProps, null)(Form)

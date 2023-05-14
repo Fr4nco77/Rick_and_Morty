@@ -1,5 +1,5 @@
 import './App.css';
-import Cards from './components/Cards/Cards.jsx';
+import Cards from './components/Cards/Cards';
 import Nav from './components/Nav/Nav';
 import About from "./components/About/About"
 import Detail from './components/Detail/Detail';
@@ -7,12 +7,12 @@ import Nop from './components/404/404'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
-import Form from './components/Form/Form';
-import Favorites from "./components/Favorites/Favorites"
+import Form from "./components/Form/Form"
+import Favorites from './components/Favorites/Favorites';
 
 function App() {
    const [ characters, setCharacters ] = useState([]);
-   const [ access, setAccess ] = useState(true);
+   const [ access, setAccess ] = useState(false);
 
 
    const { pathname } = useLocation();

@@ -7,9 +7,8 @@ import styles from "./Favorites.module.css"
 import Typed from "typed.js"
 import astro from "../../image/astroHomeFav.png"
 import { useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom'
 
-export const Favorites = ({ myFavorites }) => {
+export const Favorites = ({ myFavorites, end }) => {
 
     const [ aux, setAux ] = useState(false)
 
@@ -24,7 +23,7 @@ export const Favorites = ({ myFavorites }) => {
     }
 
     const el = useRef(null)
-    const text = ["", "Que curioso esas tarjetas de refencia eran mis preferidas, aunque nunca entendí bien por qué","Mi padre solia decirme que todo me fascinaba...ja", "...", "..", "Perdon me fui por un momento", "Si quieres puedes ordenar esas tarjetas con los interruptores de arriba y/o devolverlas a su sitio cuando allas acabado con ellas", "Aparte puedes acceder al Reporte de cada individuo, aunque con la cantidad de informacion que hay alrededor nuestro seria una perdida de tiempo", ""];
+    const text = ["", "Que curioso esas tarjetas de refencia eran mis preferidas, aunque nunca entendí bien por qué","Mi padre solia decirme que todo me fascinaba...ja", "...", "...", "Perdon me fui por un momento", "Si quieres puedes ordenar esas tarjetas con los interruptores de arriba y/o devolverlas a su sitio cuando allas acabado con ellas", "Aparte puedes acceder al Reporte de cada individuo, aunque con la cantidad de informacion que hay alrededor nuestro seria una perdida de tiempo", ""];
     const options = {
         strings: text,
         typeSpeed: 50,
@@ -36,7 +35,9 @@ export const Favorites = ({ myFavorites }) => {
     };
     
     useEffect(() => {
-        const typed = new Typed(el.current, options)
+        if(el.current) {
+            const typed = new Typed(el.current, options)
+        }
     }, [])
 
     return(
@@ -70,16 +71,21 @@ export const Favorites = ({ myFavorites }) => {
                     }
                 </div>
             </div>
-            <div className={styles.astroContainer}>
-                <p id={styles.dialogue} ref={el}></p>
-                <Link to="/about"><img id={styles.astro}src={astro} alt="astro" /></Link>
-            </div>
+            {
+                end ? (<></>) : (
+                    <div className={styles.astroContainer}>
+                        <p id={styles.dialogue} ref={el}></p>
+                        <img id={styles.astro}src={astro} alt="astro"/>
+                    </div>
+                )
+            }
         </div>)
 }
 
 const mapStateToProps = (state) => {
     return {
-        myFavorites: state.myFavorites
+        myFavorites: state.myFavorites,
+        end: state.end
     }
 }
 
